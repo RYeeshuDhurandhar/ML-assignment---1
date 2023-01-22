@@ -13,7 +13,11 @@ def accuracy(y_hat: pd.Series, y: pd.Series) -> float:
     ensure that the function does not fail in corner cases.
     """
     assert y_hat.size == y.size
+    assert y_hat.name == y.name        
+    assert y_hat.dtype == y.dtype    
+    
     # TODO: Write here
+    return (y_hat == y).mean()
     pass
 
 
